@@ -7,7 +7,7 @@ $ python manage.py migrate
 ```
 - 這時再訪問 http://localhost:8000/admin 就正常，有個登入的頁面
   - 會帶到 http://localhost:8000/admin/login/?next=/admin/
-- 這算是 Django 的特色
+- 這算是 Django 的特色之一，有立即可用的admin
 
 ## Create polls Model
 ### polls/models.py
@@ -37,4 +37,33 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 ]
+```
+
+## Django Shell Interactive Mode
+
+```
+$ python manage.py shell
+
+
+C:\2016-djangoproject\mysite>python manage.py shell
+Python 3.5.2 (v3.5.2:4def2a2901a5, Jun 25 2016, 22:01:18) [MSC v.1900 32 bit (Intel)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+(InteractiveConsole)
+>>> from polls.models import Question, Choice
+>>> Question.objects.all()
+[]
+>>> from django.utils import timezone
+>>> q = Question(question_text="What's new?", pub_date=timezone.now())
+>>> q.save()
+>>> q.id
+1
+>>> q.question_text
+"What's new?"
+>>> q.pub_date
+datetime.datetime(2016, 7, 25, 10, 41, 24, 466366, tzinfo=<UTC>)
+>>> q.question_text="What's up?"
+>>> q.save()
+>>> Question.objects.all()
+[<Question: Question object>]
+>>>
 ```
