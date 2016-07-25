@@ -65,8 +65,39 @@ C:\2016-DJANGOPROJECT\MYSITE\POLLS
 
 ## Make polls Working
 ### (1) edit polls/views.py
+
+```
+from django.http import HttpResponse
+
+def index(request):
+    return HttpResponse("中文是不是可以顯示? Hello, world. You're at the polls index.")
+```
+
+
 ### (2) cretae polls/urls.py
-### (1) edit mysilte/urls.py
+```
+from django.conf.urls import url
+from . import views
+
+urlpatterns = [
+    url(r'^$', views.index, name='index'),
+]
+
+```
+
+
+
+### (3) edit mysilte/urls.py
+
+```
+from django.conf.urls import url, include
+from django.contrib import admin
+
+urlpatterns = [
+    url(r'^polls/', include('polls.urls')),
+    url(r'^admin/', admin.site.urls),
+]
+```
 
 ## Check Current Status
 ### (1) http://localhost:8000/polls/
@@ -74,6 +105,20 @@ C:\2016-DJANGOPROJECT\MYSITE\POLLS
 ```
 中文是不是可以顯示? Hello, world. You're at the polls index.
 ```
+
+### (2) http://localhost:8000/
+
+```
+Page not found (404)
+```
+
+### (3) http://localhost:8000/admin
+
+```
+OperationalError at /admin/
+```
+
+
 
 ## 心得
 
