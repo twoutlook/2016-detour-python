@@ -82,4 +82,8 @@ from .models import Question
 
 admin.site.register(Question)
 ```
-### (2) refresh admin page, No need to runserver again
+### (2) Refresh admin page, No need to runserver again
+### (3) 這時候其實已經可以在頁面增刪改查 Question 了
+
+## 原來 Django 是用來處理 Newsroom
+### WordPress 是用來處理 BLOG
