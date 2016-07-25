@@ -40,6 +40,9 @@ INSTALLED_APPS = [
 ```
 
 ## Django Shell Interactive Mode
+### 可以用來檢查驗証 API
+### 同時修改 Class
+
 
 ```
 $ python manage.py shell
@@ -67,3 +70,16 @@ datetime.datetime(2016, 7, 25, 10, 41, 24, 466366, tzinfo=<UTC>)
 [<Question: Question object>]
 >>>
 ```
+
+## Django Admin
+    python manage.py createsuperuser
+    
+## Register App polls to admin
+### (1) edit polls\admin.py
+```
+from django.contrib import admin
+from .models import Question
+
+admin.site.register(Question)
+```
+### (2) refresh admin page, No need to runserver again
