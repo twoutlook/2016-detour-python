@@ -40,8 +40,8 @@ INSTALLED_APPS = [
 ```
 
 ## Django Shell Interactive Mode
-### 可以用來檢查驗証 API
-### 同時修改 Class
+### (1)可以用來檢查驗証 API，修改 Class，仍要重新進入 shell 才有效。
+### (2)反覆打指令其實蠻煩的，用腳本比較科學。
 
 
 ```
