@@ -74,3 +74,14 @@ C:\2016-DJANGOPROJECT\MYSITE\POLLS
 ```
 中文是不是可以顯示? Hello, world. You're at the polls index.
 ```
+
+## 心得
+
+### (1) 一個 project 通常有多個 app，訪問 app 通常就是在次目錄。 
+### (2) 要一個 view 能運用要三個地方都做對，是不是可以開發出整合的開發系統?
+### (3) 正式環境的掛放不是問題，可以在開發環境安心開發。
+
+
+ 
+
+
