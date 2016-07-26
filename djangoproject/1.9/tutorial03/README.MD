@@ -1,7 +1,7 @@
 #  take note of <b>Writing your first Django app, part 3</b>
 Reference, https://docs.djangoproject.com/en/1.9/intro/tutorial03/
 
-## Write views
+## Write views to ensure parsing and routing
 ### (1) add def to polls/views.py
 ```
 def detail(request, question_id):
@@ -30,3 +30,13 @@ urlpatterns = [
 ```
 ### (3) check http://localhost:8000/polls/12345/
     You're looking at question 12345.
+
+
+## Write actual views 
+### (1) edit index on polls/views.py
+```
+def index(request):
+    latest_question_list = Question.objects.order_by('-pub_date')[:5]
+    output = ', '.join([q.question_text for q in latest_question_list])
+    return HttpResponse(output)
+```
