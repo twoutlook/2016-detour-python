@@ -4,10 +4,10 @@ Reference, https://docs.djangoproject.com/en/1.9/intro/tutorial05/
 ## 測試自動化
 - What
 - Why
-  -- Save you time
-  -- Prevent problem
-  -- Make code attractive
-  -- Help teams work together
+  - Save you time
+  - Prevent problem
+  - Make code attractive
+  - Help teams work together
   
 - 信息安全︰ race condition!!!
 - view.py 啟用 class IndexView(generic.ListView):
@@ -27,5 +27,6 @@ Reference, https://docs.djangoproject.com/en/1.9/intro/tutorial05/
         self.assertEqual(val,123)
 
 ```
+- 發現新的樂趣!
 
 
