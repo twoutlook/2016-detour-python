@@ -135,3 +135,9 @@ def detail(request, question_id):
 ```
 
 ## Easy or Hard lesson to remove hardcoded index
+
+## Implement Namespace
+- 要注意不使用和使用 Namespace 必需成套，混搭會報錯
+- 如下的註譯方式無效，特別注意，要留底的話可以另存為 index-draft.html
+      <!-- <li>xxx <a href="{% url 'detail' question.id %}">{{ question.question_text }}</a></li> -->
+      
