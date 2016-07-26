@@ -81,3 +81,17 @@ def index(request):
     填入資料後,是否可以查看?
     What's up?
 ```
+## Render is better than HttpResponse
+
+```
+...
+from django.shortcuts import render
+
+def index(request):
+    latest_question_list = Question.objects.order_by('-pub_date')[:5]
+    context = {'latest_question_list': latest_question_list}
+    return render(request, 'polls/index.html', context)
+...
+```
+### 這是完全取代之前代碼，有時候不太確定是不是真的有效，故意先將[:5]改成[:3]就知道了
+
