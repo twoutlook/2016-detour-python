@@ -2,6 +2,17 @@
 Reference, https://docs.djangoproject.com/en/1.9/intro/tutorial01/
 
 ## My Working Environment 
+- 確認工作環境
+- 創建項目 Project
+- 運行開發環境 Web Server
+- 創建應用 App/Application
+- 套用學習 urlpatterns 
+  -  url(r'^$', views.index, name='index'),  
+    - r'^$' 是什麼意思? 這是正則表示法的課題
+    
+
+
+## My Working Environment 
 
 ```
 C:\2016-djangoproject>python -m django --version
