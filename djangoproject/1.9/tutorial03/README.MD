@@ -95,3 +95,20 @@ def index(request):
 ```
 ### 這是完全取代之前代碼，有時候不太確定是不是真的有效，故意先將[:5]改成[:3]就知道了
 
+## Show actual detial and also handle 404 
+
+### (1)edit detail
+```
+...
+def detail(request, question_id):
+    try:
+        question = Question.objects.get(pk=question_id)
+    except Question.DoesNotExist:
+        raise Http404("Question does not exist")
+    return render(request, 'polls/detail.html', {'question': question})
+...
+```
+### (2)create polls/templates/polls/detail.html
+```
+{{ question }}
+```
