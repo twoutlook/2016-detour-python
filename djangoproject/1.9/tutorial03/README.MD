@@ -133,3 +133,5 @@ def detail(request, question_id):
 {% endfor %}
 </ul>
 ```
+
+## Easy or Hard lesson to remove hardcoded index
