@@ -34,6 +34,7 @@ urlpatterns = [
 
 ## Write actual views 
 ### (1) edit index on polls/views.py
+This is a hard-coding, testing purpose.
 ```
 def index(request):
     latest_question_list = Question.objects.order_by('-pub_date')[:5]
@@ -43,4 +44,40 @@ def index(request):
 We actually get result like this,
 ```
     Where's question 4, I thought I saved that., question 5 xxx, 做為問卷調查的工具, 填入資料後,是否可以查看?, What's up?
+```
+### (2-1) add templae file polls/templates/polls/index.html
+```
+{% if latest_question_list %}
+    <ul>
+    {% for question in latest_question_list %}
+        <li><a href="/polls/{{ question.id }}/">{{ question.question_text }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No polls are available.</p>
+{% endif %}
+```
+### (2-2) adjust index view in polls/views
+```
+...
+from django.template import loader
+
+def index(request):
+    latest_question_list = Question.objects.order_by('-pub_date')[:5]
+    template = loader.get_template('polls/index.html')
+    context = {
+        'latest_question_list': latest_question_list,
+    }
+    return HttpResponse(template.render(context, request))
+...
+```
+
+### (2-3) We get much desired result
+
+```
+    Where's question 4, I thought I saved that.
+    question 5 xxx
+    做為問卷調查的工具
+    填入資料後,是否可以查看?
+    What's up?
 ```
