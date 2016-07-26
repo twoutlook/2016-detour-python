@@ -93,7 +93,7 @@ def index(request):
     return render(request, 'polls/index.html', context)
 ...
 ```
-### 這是完全取代之前代碼，有時候不太確定是不是真的有效，故意先將[:5]改成[:3]就知道了
+- 這是完全取代之前代碼，有時候不太確定是不是真的有效，故意先將[:5]改成[:3]就知道了
 
 ## Show actual detial and also handle 404 
 
@@ -111,4 +111,25 @@ def detail(request, question_id):
 ### (2)create polls/templates/polls/detail.html
 ```
 {{ question }}
+```
+
+## A better way to render detail and enhance detail content 
+
+### (1)edit detail
+```
+...
+from django.shortcuts import get_object_or_404, render
+
+def detail(request, question_id):
+    question = get_object_or_404(Question, pk=question_id)
+    return render(request, 'polls/detail.html', {'question': question})
+```
+### (2)create polls/templates/polls/detail.html
+```
+<h1>{{ question.question_text }}</h1>
+<ul>
+{% for choice in question.choice_set.all %}
+    <li>{{ choice.choice_text }}</li>
+{% endfor %}
+</ul>
 ```
