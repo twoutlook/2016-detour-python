@@ -284,3 +284,77 @@ removing 'django-polls-0.1' (and everything under it)
 
 C:\2016-djangoproject\django-polls>
 ```
+## 有點波折，終於成功安裝回來
+```
+
+
+C:\2016-djangoproject\mysite>pip install --user django-polls-0.1.tar.gz
+Requirement 'django-polls-0.1.tar.gz' looks like a filename, but the file does n
+ot exist
+Processing c:\2016-djangoproject\mysite\django-polls-0.1.tar.gz
+Exception:
+Traceback (most recent call last):
+  File "d:\python\python35-32\lib\site-packages\pip\basecommand.py", line 215, i
+n main
+    status = self.run(options, args)
+  File "d:\python\python35-32\lib\site-packages\pip\commands\install.py", line 2
+99, in run
+    requirement_set.prepare_files(finder)
+  File "d:\python\python35-32\lib\site-packages\pip\req\req_set.py", line 370, i
+n prepare_files
+    ignore_dependencies=self.ignore_dependencies))
+  File "d:\python\python35-32\lib\site-packages\pip\req\req_set.py", line 587, i
+n _prepare_file
+    session=self.session, hashes=hashes)
+  File "d:\python\python35-32\lib\site-packages\pip\download.py", line 798, in u
+npack_url
+    unpack_file_url(link, location, download_dir, hashes=hashes)
+  File "d:\python\python35-32\lib\site-packages\pip\download.py", line 705, in u
+npack_file_url
+    unpack_file(from_path, location, content_type, link)
+  File "d:\python\python35-32\lib\site-packages\pip\utils\__init__.py", line 602
+, in unpack_file
+    tarfile.is_tarfile(filename) or
+  File "d:\python\python35-32\lib\tarfile.py", line 2448, in is_tarfile
+    t = open(name)
+  File "d:\python\python35-32\lib\tarfile.py", line 1557, in open
+    return func(name, "r", fileobj, **kwargs)
+  File "d:\python\python35-32\lib\tarfile.py", line 1622, in gzopen
+    fileobj = gzip.GzipFile(name, mode + "b", compresslevel, fileobj)
+  File "d:\python\python35-32\lib\gzip.py", line 163, in __init__
+    fileobj = self.myfileobj = builtins.open(filename, mode or 'rb')
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\2016-djangoproject\
+\mysite\\django-polls-0.1.tar.gz'
+
+C:\2016-djangoproject\mysite>dir
+ 驱动器 C 中的卷是 OS
+ 卷的序列号是 54D4-5F1D
+
+ C:\2016-djangoproject\mysite 的目录
+
+2016/07/27  09:53    <DIR>          .
+2016/07/27  09:53    <DIR>          ..
+2016/07/26  15:15            43,008 db.sqlite3
+2016/07/27  09:40           116,046 django-polls-0.1.zip
+2016/07/25  13:54               249 manage.py
+2016/07/25  13:58    <DIR>          mysite
+2016/07/26  11:56                96 result.txt
+2016/07/26  15:53    <DIR>          templates
+               4 个文件        159,399 字节
+               4 个目录 97,788,833,792 可用字节
+
+C:\2016-djangoproject\mysite>pip install --user django-polls-0.1.zip
+Processing c:\2016-djangoproject\mysite\django-polls-0.1.zip
+Installing collected packages: django-polls
+  Running setup.py install for django-polls ... done
+Successfully installed django-polls
+
+C:\2016-djangoproject\mysite>python manage.py runserver
+Performing system checks...
+
+System check identified no issues (0 silenced).
+July 27, 2016 - 10:11:38
+Django version 1.9.7, using settings 'mysite.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
+```
