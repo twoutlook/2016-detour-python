@@ -2,6 +2,15 @@
 #  take note of <b>Writing your first patch for Django¶</b>
 Reference, https://docs.djangoproject.com/en/1.9/intro/contributing/
 
+## 心得
+- 要能夠在本機上的 Python 虛擬環境完成現有的測試
+  - 基本上是沒有錯誤的 
+- 要能夠回到某個特定點，測試並獲得已知的測試失敗
+  - git 的觀念要夠紮實 
+- 一開始在 Win 10 做沒有成功，漏了 pip install -e /path/to/your/local/clone/django/
+- 在 Ubuntu 16.04 有完成。
+
+
 ## Working on Ubuntu 16.04
 ```
 (djangodev) ubuntu002@ubuntu002:~/django$ cd tests
