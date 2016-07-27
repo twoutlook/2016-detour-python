@@ -8,6 +8,14 @@ Reference, https://docs.djangoproject.com/en/1.9/intro/contributing/
 - 要能夠回到某個特定點，測試並獲得已知的測試失敗
   - git 的觀念要夠紮實 
 - 一開始在 Win 10 做沒有成功，漏了 pip install -e /path/to/your/local/clone/django/
+  - 看到的版本是  
+```  
+C:\Users\MARK\.virtualenvs\django222\Scripts>activate
+
+(django222) C:\Users\MARK\.virtualenvs\django222\Scripts>python -m django --ver
+ion
+1.11.dev20160725174150
+```
 - 在 Ubuntu 16.04 有完成。
 
 
