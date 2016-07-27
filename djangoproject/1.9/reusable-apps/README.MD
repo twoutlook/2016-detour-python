@@ -58,3 +58,23 @@ tools-25.1.0.zip")']' returned non-zero exit status 1
 
 C:\2016-djangoproject>
 ```
+
+## setuptools exists
+```
+Windows PowerShell
+版权所有 (C) 2015 Microsoft Corporation。保留所有权利。
+
+PS C:\Users\MARK> (Invoke-WebRequest https://bootstrap.pypa.io/ez_setup.py).Content | python -
+Invoke-WebRequest : 无法连接到远程服务器
+所在位置 行:1 字符: 2
++ (Invoke-WebRequest https://bootstrap.pypa.io/ez_setup.py).Content | p ...
++  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (System.Net.HttpWebRequest:HttpWebRequest) [Invoke-WebRequest]，WebExce
+    ption
+    + FullyQualifiedErrorId : WebCmdletWebResponseException,Microsoft.PowerShell.Commands.InvokeWebRequestCommand
+
+PS C:\Users\MARK> easy_install --version
+setuptools 25.1.0 from d:\python\python35-32\lib\site-packages\setuptools-25.1.0-py3.5.egg (Python 3.5)
+PS C:\Users\MARK>
+```
+
