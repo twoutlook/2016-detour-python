@@ -2,6 +2,17 @@
 #  take note of <b>Advanced tutorial: How to write reusable apps</b>
 Reference, https://docs.djangoproject.com/en/1.9/intro/reusable-apps/
 
+## 心得
+- 先安裝 <b>setuptools<b>
+- 教程要求將之前做的 polls <b>移出<b>到要打包的目錄
+  - 這是故意的，實務上我們一般是<b>複製<b>
+- 按規定定打包後，在回到 mysite 去安裝回來
+  - 發現使用預設數據庫的好處，數據都在。
+  - 遇到打包的檔案名稱和範例指令不一樣。
+  
+
+
+
 ## failed to run ez_setup.py
 
 
